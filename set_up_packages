@@ -1,0 +1,6 @@
+# scripts/01_setup_packages.R
+packages <- c("MASS", "FNN", "class", "ggplot2", "caret", "scales", "here")
+to_install <- setdiff(packages, rownames(installed.packages()))
+if (length(to_install)) install.packages(to_install, dependencies = TRUE)
+
+invisible(lapply(packages, library, character.only = TRUE))
